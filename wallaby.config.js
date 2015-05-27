@@ -7,9 +7,9 @@ let babel = require('babel');
 module.exports = function() {
   return {
     files: [
-      {pattern: 'src/test/phantomPolyfill.js', instrument: false},
+      {pattern: 'src/testlib/phantomPolyfill.js', instrument: false},
       {pattern: 'src/components/**/*.scss', instrument: false, load: false},
-      {pattern: 'src/components/**/component.js', load: false}
+      {pattern: 'src/components/**/*.component.js', load: false}
     ],
 
     tests: [

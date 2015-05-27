@@ -3,13 +3,14 @@
 import React from 'react';
 import AutoComplete from '../src/components/AutoComplete/AutoComplete.component.js';
 
-let SearchField = React.createClass({
+const _DATA = [{label: 'author', data: ['Test', 'Hest', 'Fest', 'Gæst']}];
 
+let SearchField = React.createClass({
   render() {
     return (
       <div>
         <input type='text' placeholder='Search' size='50'/>
-        <AutoComplete visible={true} />
+        <AutoComplete visible={true} data={_DATA}/>
       </div>
     );
   }

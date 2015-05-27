@@ -5,8 +5,6 @@ import AutoCompleteCategory from './../AutoCompleteCategory.component.js';
 
 import './AutoComplete.scss';
 
-const _DATA = [{label: 'author', data: ['Test', 'Hest', 'Fest', 'Gæst']}];
-
 let AutoComplete = React.createClass({
   render() {
     let categories = this._getCategories();
@@ -22,7 +20,8 @@ let AutoComplete = React.createClass({
 
   _getCategories() {
     let categories = [];
-    _DATA.forEach((value, key) => {
+    let data = this.props.data || [];
+    data.forEach((value, key) => {
       categories.push(<AutoCompleteCategory key={key} label={value.label} />);
     });
 

@@ -67,7 +67,7 @@
 	      'div',
 	      null,
 	      _react2['default'].createElement('input', { type: 'text', placeholder: 'Search', size: '50' }),
-	      _react2['default'].createElement(_srcComponentsAutoCompleteAutoCompleteComponentJs2['default'], null)
+	      _react2['default'].createElement(_srcComponentsAutoCompleteAutoCompleteComponentJs2['default'], { visible: true })
 	    );
 	  }
 	});
@@ -20937,25 +20937,38 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _AutoCompleteCategoryComponentJs = __webpack_require__(/*! ./../AutoCompleteCategory.component.js */ 158);
+	//import _ from 'lodash';
+	
+	var _AutoCompleteCategoryComponentJs = __webpack_require__(/*! ./../AutoCompleteCategory.component.js */ 160);
 	
 	var _AutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryComponentJs);
 	
-	__webpack_require__(/*! ./AutoComplete.scss */ 159);
+	__webpack_require__(/*! ./AutoComplete.scss */ 161);
 	
-	var _DATA = {};
+	var _DATA = [{ label: 'author', data: ['Test', 'Hest', 'Fest', 'Gæst'] }];
 	
 	var AutoComplete = _react2['default'].createClass({
 	  displayName: 'AutoComplete',
 	
 	  render: function render() {
-	    var categories = [];
+	    var categories = this._getCategories();
+	    var classNames = 'autocomplete--container';
+	    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
 	
 	    return _react2['default'].createElement(
 	      'div',
-	      { className: 'autocomplete--container' },
+	      { className: classNames },
 	      categories
 	    );
+	  },
+	
+	  _getCategories: function _getCategories() {
+	    var categories = [];
+	    _DATA.forEach(function (value, key) {
+	      categories.push(_react2['default'].createElement(_AutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label }));
+	    });
+	
+	    return categories;
 	  }
 	});
 	
@@ -20963,7 +20976,9 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 158 */
+/* 158 */,
+/* 159 */,
+/* 160 */
 /*!**********************************************************!*\
   !*** ./src/components/AutoCompleteCategory.component.js ***!
   \**********************************************************/
@@ -20985,10 +21000,15 @@
 	
 	  render: function render() {
 	    console.log(this.props);
+	
 	    return _react2['default'].createElement(
 	      'div',
 	      null,
-	      'hest'
+	      _react2['default'].createElement(
+	        'h2',
+	        null,
+	        this.props.label
+	      )
 	    );
 	  }
 	});
@@ -20997,7 +21017,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 159 */
+/* 161 */
 /*!*******************************************************!*\
   !*** ./src/components/AutoComplete/AutoComplete.scss ***!
   \*******************************************************/

@@ -2,5 +2,8 @@
   background-color: lightblue;
   height: 200px; }
 
+.autocomplete--container-hidden {
+  display: none; }
+
 /*# sourceMappingURL=examples/public/sass.map */
 /*# sourceMappingURL=style.css.map*/

@@ -9,7 +9,7 @@ let SearchField = React.createClass({
     return (
       <div>
         <input type='text' placeholder='Search' size='50'/>
-        <AutoComplete />
+        <AutoComplete visible={true} />
       </div>
     );
   }

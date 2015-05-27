@@ -5,17 +5,28 @@ import AutoCompleteCategory from './../AutoCompleteCategory.component.js';
 
 import './AutoComplete.scss';
 
-const _DATA = {};
+const _DATA = [{label: 'author', data: ['Test', 'Hest', 'Fest', 'Gæst']}];
 
 let AutoComplete = React.createClass({
   render() {
-    let categories = [];
+    let categories = this._getCategories();
+    let classNames = 'autocomplete--container';
+    classNames += (this.props.visible === true) ? '' : ' autocomplete--container-hidden';
 
     return (
-      <div className='autocomplete--container'>
+      <div className={classNames} >
         {categories}
       </div>
     );
+  },
+
+  _getCategories() {
+    let categories = [];
+    _DATA.forEach((value, key) => {
+      categories.push(<AutoCompleteCategory key={key} label={value.label} />);
+    });
+
+    return categories;
   }
 });
 

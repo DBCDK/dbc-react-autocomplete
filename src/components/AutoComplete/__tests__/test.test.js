@@ -1,9 +1,38 @@
 'use strict';
+import React from 'react/addons';
+let TestUtils = React.addons.TestUtils;
 
-let AutoComplete = require('../AutoComplete.component');
+import {expect} from 'chai';
+import AutoComplete from '../AutoComplete.component.js';
 
-describe('Test', function() {
-  it('TestTest', function() {
-    console.log('hest');
+describe('Test AutoComplete Component', () => {
+
+  it('Assert hidden class to be added when visible:false', () => {
+    let rendered = TestUtils.renderIntoDocument(<AutoComplete visible={false}/>);
+
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
+  });
+
+  it('Assert hidden class not to be added when visible:true', () => {
+    let rendered = TestUtils.renderIntoDocument(<AutoComplete visible={true}/>);
+
+    expect(rendered.getDOMNode().className).not.to.contain('autocomplete--container-hidden');
+  });
+
+  it('Assert hidden class to be added when visible:[is-anything-but-true]', () => {
+    let rendered = TestUtils.renderIntoDocument(<AutoComplete visible={''}/>);
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
+
+    rendered = TestUtils.renderIntoDocument(<AutoComplete visible={'1'}/>);
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
+
+    rendered = TestUtils.renderIntoDocument(<AutoComplete visible={'0'}/>);
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
+
+    rendered = TestUtils.renderIntoDocument(<AutoComplete visible={1}/>);
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
+
+    rendered = TestUtils.renderIntoDocument(<AutoComplete visible={0}/>);
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
   });
 });

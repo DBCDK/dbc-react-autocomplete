@@ -14,10 +14,15 @@ var AutoCompleteCategory = _react2['default'].createClass({
 
   render: function render() {
     console.log(this.props);
+
     return _react2['default'].createElement(
       'div',
       null,
-      'hest'
+      _react2['default'].createElement(
+        'h2',
+        null,
+        this.props.label
+      )
     );
   }
 });

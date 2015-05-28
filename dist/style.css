@@ -1,9 +1,23 @@
 .autocomplete--container {
-  background-color: lightblue;
-  height: 200px; }
+  background-color: lightblue; }
 
 .autocomplete--container-hidden {
   display: none; }
+
+/*# sourceMappingURL=examples/public/sass.map */.autocomplete--category-container {
+  border: 1px solid #000;
+  width: 100%; }
+
+.autocomplete--category--label-container {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: lightyellow; }
+
+.autocomplete--category--rows-container {
+  width: 80%;
+  display: inline-block;
+  background: lightgreen; }
 
 /*# sourceMappingURL=examples/public/sass.map */
 /*# sourceMappingURL=style.css.map*/

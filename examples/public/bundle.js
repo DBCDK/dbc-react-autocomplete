@@ -59,7 +59,7 @@
 	
 	var _srcComponentsAutoCompleteAutoCompleteComponentJs2 = _interopRequireDefault(_srcComponentsAutoCompleteAutoCompleteComponentJs);
 	
-	var _DATA = [{ label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest'] }];
+	var _DATA = [{ label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest'] }, { label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest'] }];
 	
 	var SearchField = _react2['default'].createClass({
 	  displayName: 'SearchField',
@@ -20998,6 +20998,8 @@
 	
 	var _AutoCompleteRowAutoCompleteRowComponentJs2 = _interopRequireDefault(_AutoCompleteRowAutoCompleteRowComponentJs);
 	
+	__webpack_require__(/*! ./AutoCompleteCategory.scss */ 164);
+	
 	var AutoCompleteCategory = _react2['default'].createClass({
 	  displayName: 'AutoCompleteCategory',
 	
@@ -21014,7 +21016,7 @@
 	
 	    return _react2['default'].createElement(
 	      'div',
-	      null,
+	      { className: 'autocomplete--category-container' },
 	      _react2['default'].createElement(
 	        'div',
 	        { className: 'autocomplete--category--label-container' },
@@ -21061,7 +21063,7 @@
 	    var text = this.props.text || '';
 	    return _react2['default'].createElement(
 	      'div',
-	      null,
+	      { className: 'autocomplete--row' },
 	      _react2['default'].createElement(
 	        'span',
 	        null,
@@ -33347,6 +33349,15 @@
 		return module;
 	}
 
+
+/***/ },
+/* 164 */
+/*!***********************************************************************!*\
+  !*** ./src/components/AutoCompleteCategory/AutoCompleteCategory.scss ***!
+  \***********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

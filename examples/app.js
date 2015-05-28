@@ -3,7 +3,7 @@
 import React from 'react';
 import AutoComplete from '../src/components/AutoComplete/AutoComplete.component.js';
 
-const _DATA = [{label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest']}];
+const _DATA = [{label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest']}, {label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest']}];
 
 let SearchField = React.createClass({
   render() {

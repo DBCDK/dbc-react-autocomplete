@@ -1,0 +1,17 @@
+.autocomplete--category-container {
+  border: 1px solid #000;
+  width: 100%;
+}
+
+.autocomplete--category--label-container {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: lightyellow;
+}
+
+.autocomplete--category--rows-container {
+  width: 80%;
+  display: inline-block;
+  background: lightgreen;
+}

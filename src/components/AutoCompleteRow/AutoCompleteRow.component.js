@@ -5,7 +5,7 @@ var AutoCompleteRow = React.createClass({
   render() {
     const text = this.props.text || '';
     return (
-      <div>
+      <div className='autocomplete--row'>
         <span>{text}</span>
       </div>
     );

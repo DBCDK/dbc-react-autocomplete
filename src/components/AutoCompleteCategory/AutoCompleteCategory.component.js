@@ -2,6 +2,7 @@
 import React from 'react';
 import {isArray} from 'lodash';
 import AutoCompleteRow from '../AutoCompleteRow/AutoCompleteRow.component.js';
+import './AutoCompleteCategory.scss';
 
 var AutoCompleteCategory = React.createClass({
   render() {
@@ -16,7 +17,7 @@ var AutoCompleteCategory = React.createClass({
     });
 
     return (
-      <div>
+      <div className='autocomplete--category-container'>
         <div className='autocomplete--category--label-container'>
           <span className='autocomplete--category--label'>{this.props.label}</span>
         </div>

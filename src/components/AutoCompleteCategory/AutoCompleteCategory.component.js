@@ -1,10 +1,14 @@
 'use strict';
 import React from 'react';
+import {isArray} from 'lodash';
 import AutoCompleteRow from '../AutoCompleteRow/AutoCompleteRow.component.js';
 
 var AutoCompleteCategory = React.createClass({
   render() {
     let data = this.props.data || [];
+    if (!isArray(data)) {
+      data = new Array(data);
+    }
 
     let rows = [];
     data.forEach((value, key) => {

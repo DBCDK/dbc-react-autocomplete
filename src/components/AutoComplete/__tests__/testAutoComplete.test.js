@@ -34,5 +34,8 @@ describe('Test AutoComplete Component', () => {
 
     rendered = TestUtils.renderIntoDocument(<AutoComplete visible={0}/>);
     expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
+
+    rendered = TestUtils.renderIntoDocument(<AutoComplete visible={'test'}/>);
+    expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
   });
 });

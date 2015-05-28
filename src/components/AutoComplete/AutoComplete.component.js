@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import AutoCompleteCategory from './../AutoCompleteCategory.component.js';
+import AutoCompleteCategory from './../AutoCompleteCategory/AutoCompleteCategory.component.js';
 
 import './AutoComplete.scss';
 
@@ -22,7 +22,7 @@ let AutoComplete = React.createClass({
     let categories = [];
     let data = this.props.data || [];
     data.forEach((value, key) => {
-      categories.push(<AutoCompleteCategory key={key} label={value.label} />);
+      categories.push(<AutoCompleteCategory key={key} label={value.label} data={value.data}/>);
     });
 
     return categories;

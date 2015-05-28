@@ -19,9 +19,13 @@ var AutoCompleteCategory = _react2['default'].createClass({
       'div',
       null,
       _react2['default'].createElement(
-        'h2',
-        null,
-        this.props.label
+        'div',
+        { className: 'autocomplete--category--label-container' },
+        _react2['default'].createElement(
+          'span',
+          { className: 'autocomplete--category--label' },
+          this.props.label
+        )
       )
     );
   }

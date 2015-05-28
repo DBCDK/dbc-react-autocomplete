@@ -59,6 +59,8 @@
 	
 	var _srcComponentsAutoCompleteAutoCompleteComponentJs2 = _interopRequireDefault(_srcComponentsAutoCompleteAutoCompleteComponentJs);
 	
+	var _DATA = [{ label: 'author', data: ['Test Hest', 'Hest Hest', 'Fest Hest', 'Gæst Hest'] }];
+	
 	var SearchField = _react2['default'].createClass({
 	  displayName: 'SearchField',
 	
@@ -67,7 +69,7 @@
 	      'div',
 	      null,
 	      _react2['default'].createElement('input', { type: 'text', placeholder: 'Search', size: '50' }),
-	      _react2['default'].createElement(_srcComponentsAutoCompleteAutoCompleteComponentJs2['default'], { visible: true })
+	      _react2['default'].createElement(_srcComponentsAutoCompleteAutoCompleteComponentJs2['default'], { visible: true, data: _DATA })
 	    );
 	  }
 	});
@@ -20937,15 +20939,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	//import _ from 'lodash';
+	var _AutoCompleteCategoryAutoCompleteCategoryComponentJs = __webpack_require__(/*! ./../AutoCompleteCategory/AutoCompleteCategory.component.js */ 161);
 	
-	var _AutoCompleteCategoryComponentJs = __webpack_require__(/*! ./../AutoCompleteCategory.component.js */ 160);
+	var _AutoCompleteCategoryAutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryAutoCompleteCategoryComponentJs);
 	
-	var _AutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryComponentJs);
-	
-	__webpack_require__(/*! ./AutoComplete.scss */ 161);
-	
-	var _DATA = [{ label: 'author', data: ['Test', 'Hest', 'Fest', 'Gæst'] }];
+	__webpack_require__(/*! ./AutoComplete.scss */ 159);
 	
 	var AutoComplete = _react2['default'].createClass({
 	  displayName: 'AutoComplete',
@@ -20964,8 +20962,9 @@
 	
 	  _getCategories: function _getCategories() {
 	    var categories = [];
-	    _DATA.forEach(function (value, key) {
-	      categories.push(_react2['default'].createElement(_AutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label }));
+	    var data = this.props.data || [];
+	    data.forEach(function (value, key) {
+	      categories.push(_react2['default'].createElement(_AutoCompleteCategoryAutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label, data: value.data }));
 	    });
 	
 	    return categories;
@@ -20977,11 +20976,20 @@
 
 /***/ },
 /* 158 */,
-/* 159 */,
-/* 160 */
-/*!**********************************************************!*\
-  !*** ./src/components/AutoCompleteCategory.component.js ***!
-  \**********************************************************/
+/* 159 */
+/*!*******************************************************!*\
+  !*** ./src/components/AutoComplete/AutoComplete.scss ***!
+  \*******************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 160 */,
+/* 161 */
+/*!*******************************************************************************!*\
+  !*** ./src/components/AutoCompleteCategory/AutoCompleteCategory.component.js ***!
+  \*******************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20995,19 +21003,37 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _AutoCompleteRowAutoCompleteRowComponentJs = __webpack_require__(/*! ../AutoCompleteRow/AutoCompleteRow.component.js */ 162);
+	
+	var _AutoCompleteRowAutoCompleteRowComponentJs2 = _interopRequireDefault(_AutoCompleteRowAutoCompleteRowComponentJs);
+	
 	var AutoCompleteCategory = _react2['default'].createClass({
 	  displayName: 'AutoCompleteCategory',
 	
 	  render: function render() {
-	    console.log(this.props);
+	    var data = this.props.data || [];
+	
+	    var rows = [];
+	    data.forEach(function (value, key) {
+	      rows.push(_react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { key: key, text: value }));
+	    });
 	
 	    return _react2['default'].createElement(
 	      'div',
 	      null,
 	      _react2['default'].createElement(
-	        'h2',
-	        null,
-	        this.props.label
+	        'div',
+	        { className: 'autocomplete--category--label-container' },
+	        _react2['default'].createElement(
+	          'span',
+	          { className: 'autocomplete--category--label' },
+	          this.props.label
+	        )
+	      ),
+	      _react2['default'].createElement(
+	        'div',
+	        { className: 'autocomplete--category--rows-container' },
+	        rows
 	      )
 	    );
 	  }
@@ -21017,13 +21043,42 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 161 */
-/*!*******************************************************!*\
-  !*** ./src/components/AutoComplete/AutoComplete.scss ***!
-  \*******************************************************/
+/* 162 */
+/*!*********************************************************************!*\
+  !*** ./src/components/AutoCompleteRow/AutoCompleteRow.component.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	'use strict';
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var AutoCompleteRow = _react2['default'].createClass({
+	  displayName: 'AutoCompleteRow',
+	
+	  render: function render() {
+	    var text = this.props.text || '';
+	    return _react2['default'].createElement(
+	      'div',
+	      null,
+	      _react2['default'].createElement(
+	        'span',
+	        null,
+	        text
+	      )
+	    );
+	  }
+	});
+	
+	exports['default'] = AutoCompleteRow;
+	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);

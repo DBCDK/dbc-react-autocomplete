@@ -10,15 +10,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-//import _ from 'lodash';
+var _AutoCompleteCategoryAutoCompleteCategoryComponentJs = require('./../AutoCompleteCategory/AutoCompleteCategory.component.js');
 
-var _AutoCompleteCategoryComponentJs = require('./../AutoCompleteCategory.component.js');
-
-var _AutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryComponentJs);
+var _AutoCompleteCategoryAutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryAutoCompleteCategoryComponentJs);
 
 require('./AutoComplete.scss');
-
-var _DATA = [{ label: 'author', data: ['Test', 'Hest', 'Fest', 'Gæst'] }];
 
 var AutoComplete = _react2['default'].createClass({
   displayName: 'AutoComplete',
@@ -37,8 +33,9 @@ var AutoComplete = _react2['default'].createClass({
 
   _getCategories: function _getCategories() {
     var categories = [];
-    _DATA.forEach(function (value, key) {
-      categories.push(_react2['default'].createElement(_AutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label }));
+    var data = this.props.data || [];
+    data.forEach(function (value, key) {
+      categories.push(_react2['default'].createElement(_AutoCompleteCategoryAutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label, data: value.data }));
     });
 
     return categories;

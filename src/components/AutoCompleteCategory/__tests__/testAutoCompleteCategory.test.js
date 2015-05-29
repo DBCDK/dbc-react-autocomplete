@@ -8,24 +8,24 @@ import AutoCompleteRow from '../../AutoCompleteRow/AutoCompleteRow.component.js'
 
 let TestUtils = React.addons.TestUtils;
 
-describe('Assert no errors when no data is provided', () => {
+describe('Test AutoCompleteCategory Component', () => {
 
   it('Assert no errors when no props are provided', () => {
     let rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory />);
 
-    let needle = TestUtils.findRenderedDOMComponentWithClass(rendered, 'autocomplete--category--label').getDOMNode();
-    assert.isNotNull(needle);
-    expect(needle.textContent).equal('');
+    let container = TestUtils.findRenderedDOMComponentWithClass(rendered, 'autocomplete--category-container').getDOMNode();
+
+    expect(container.textContent).equal('');
   });
 
-  it('Assert label is correctly set', () => {
+  it('Assert no rendering of labelblock when label is empty', () => {
     //testing empty label
     let label = '';
     let rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory label={label}/>);
 
-    let needle = TestUtils.findRenderedDOMComponentWithClass(rendered, 'autocomplete--category--label').getDOMNode();
-    assert.isNotNull(needle);
-    expect(needle.textContent).equal(label);
+    let needle = TestUtils.scryRenderedDOMComponentsWithClass(rendered, 'autocomplete--category--label');
+    console.log(needle);
+    assert.lengthOf(needle, 0, 'no DOM objects with className=\'autocomplete--category--label\' found');
 
     //testing testlabel
     label = 'TestLabel';
@@ -34,6 +34,12 @@ describe('Assert no errors when no data is provided', () => {
     needle = TestUtils.findRenderedDOMComponentWithClass(rendered, 'autocomplete--category--label').getDOMNode();
     assert.isNotNull(needle);
     expect(needle.textContent).equal(label);
+  });
+
+  it('Assert no label-container is rendered when no label is provided', () => {
+    let rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory />);
+    let label = TestUtils.scryRenderedDOMComponentsWithClass(rendered, 'autocomplete--category--label');
+    assert.lengthOf(label, 0, 'no DOM objects with className=\'autocomplete--category--label\' found');
   });
 
   it('Assert props.data is handled correct', () => {

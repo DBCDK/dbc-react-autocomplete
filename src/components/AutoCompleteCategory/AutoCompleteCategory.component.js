@@ -11,19 +11,31 @@ var AutoCompleteCategory = React.createClass({
       data = new Array(data);
     }
 
+    const label = this.props.label || null;
+    let labelToRender = '';
+    if (label) {
+      labelToRender = this._getLabel(label);
+    }
+
     let rows = [];
     data.forEach((value, key) => {
-      rows.push(<AutoCompleteRow key={key} text={value}/>);
+      rows.push(<AutoCompleteRow key={key} text={value.text} image={value.img}/>);
     });
 
     return (
       <div className='autocomplete--category-container'>
-        <div className='autocomplete--category--label-container'>
-          <span className='autocomplete--category--label'>{this.props.label}</span>
-        </div>
+        {labelToRender}
         <div className='autocomplete--category--rows-container'>
           {rows}
         </div>
+      </div>
+    );
+  },
+
+  _getLabel(label) {
+    return (
+      <div className='autocomplete--category--label-container'>
+        <span className='autocomplete--category--label'>{label}</span>
       </div>
     );
   }

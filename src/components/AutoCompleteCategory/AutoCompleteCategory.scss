@@ -1,17 +1,24 @@
 .autocomplete--category-container {
-  border: 1px solid #000;
   width: 100%;
+
+  &:last-of-type {
+    .autocomplete--category--rows-container {
+      border-bottom: none;
+    }
+  }
 }
 
 .autocomplete--category--label-container {
   width: 20%;
   display: inline-block;
   vertical-align: top;
-  background-color: lightyellow;
+  text-align: center;
+  line-height: 70px;
 }
 
 .autocomplete--category--rows-container {
   width: 80%;
   display: inline-block;
-  background: lightgreen;
+  border-left: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
 }

@@ -30,24 +30,29 @@ This data should be structured as JSON-objects wrapped in an array. See below fo
 
 ```javascript
   //data example
-  let data = [{
-    label: 'Title',
-    data: [{
-        text: 'Test Hest',
-        img: 'http://dummyimage.com/50x50/000/fff'
-      }]
-  },
-  {
-    label: 'Author',
-    data: [{
-        text: 'Hest Hest',
-        img: ''
-      },
-      {
-        text: 'Fest Hest',
-        img: ''
-      }
-    ]},
+  let data = [
+    {
+      label: 'Title',
+      data: [
+        {
+          text: 'Test Hest',
+          img: 'http://dummyimage.com/50x50/000/fff'
+        }
+      ]
+    },
+    {
+      label: 'Author',
+      data: [
+        {
+          text: 'Hest Hest',
+          img: ''
+        },
+        {
+          text: 'Fest Hest',
+          img: ''
+        }
+      ]
+    }];
     
     //implemntation example
     <AutoComplete visible={true} data={data} />

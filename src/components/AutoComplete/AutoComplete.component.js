@@ -12,7 +12,7 @@ let AutoComplete = React.createClass({
     classNames += (this.props.visible === true) ? '' : ' autocomplete--container-hidden';
 
     return (
-      <div className={classNames} >
+      <div className={classNames}>
         {categories}
       </div>
     );

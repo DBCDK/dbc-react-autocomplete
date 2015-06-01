@@ -4,15 +4,17 @@
   "description": "DBC autocomplete React components. Giving autocomplete features on a given text input using React.",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "karma start --single-run=true",
+    "test:watch": "karma start",
     "lint": "esw -w ./src",
+    "lint:checkstyle": "eslint ./src -o report.xml -f checkstyle",
     "watch:babel": "babel ./src --ignore=./src/testlib --watch -d dist",
     "watch:bundle": "webpack --progress --colors --watch -d",
     "dev": "parallelshell \"npm run watch:babel\" \"npm run watch:bundle\""
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/DBCDK/dbc-react-autocomplete"
   },
   "bugs": {
     "url": "/issues"
@@ -36,8 +38,17 @@
     "eslint-plugin-react": "^2.3.0",
     "eslint-watch": "^1.1.1",
     "extract-text-webpack-plugin": "^0.8.1",
+    "karma": "^0.12.35",
+    "karma-cli": "0.0.4",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-webpack": "^1.5.1",
+    "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.1.2",
+    "phantomjs": "^1.9.17",
     "sass-loader": "^1.0.2",
     "wallaby-webpack": "0.0.5",
     "webpack": "^1.9.10"

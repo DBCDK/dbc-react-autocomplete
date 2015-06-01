@@ -1,4 +1,9 @@
 # dbc-react-autocomplete
+
+[![GitHub tag](https://img.shields.io/github/tag/DBCDK/dbc-react-autocomplete.svg?style=flat-square)](https://github.com/DBCDK/dbc-react-autocomplete)
+[![David](https://img.shields.io/david/DBCDK/dbc-react-autocomplete.svg?style=flat-square)](https://david-dm.org/DBCDK/dbc-react-autocomplete#info=dependencies)
+[![David](https://img.shields.io/david/dev/DBCDK/dbc-react-autocomplete.svg?style=flat-square)](https://david-dm.org/DBCDK/dbc-react-autocomplete#info=devDependencies)
+
 Node module that delivers a generic autocomplete functionality.
 
 No input field is provided within this component as it should be attached an existing input field in your application.

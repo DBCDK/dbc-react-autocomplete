@@ -22,10 +22,16 @@ let AutoComplete = React.createClass({
     let categories = [];
     let data = this.props.data || [];
     data.forEach((value, key) => {
-      categories.push(<AutoCompleteCategory key={key} label={value.label} data={value.data}/>);
+      categories.push(
+        <AutoCompleteCategory key={key} label={value.label} data={value.data}/>);
     });
 
     return categories;
+  },
+
+  propTypes: {
+    visible: React.PropTypes.bool,
+    data: React.PropTypes.array
   }
 });
 

@@ -1,8 +1,6 @@
 'use strict';
 import React from 'react';
 
-import './AutoCompleteRow.scss';
-
 var AutoCompleteRow = React.createClass({
   render() {
     const text = this.props.text || '';

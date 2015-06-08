@@ -15,8 +15,6 @@ var _AutoCompleteRowAutoCompleteRowComponentJs = require('../AutoCompleteRow/Aut
 
 var _AutoCompleteRowAutoCompleteRowComponentJs2 = _interopRequireDefault(_AutoCompleteRowAutoCompleteRowComponentJs);
 
-require('./AutoCompleteCategory.scss');
-
 var AutoCompleteCategory = _react2['default'].createClass({
   displayName: 'AutoCompleteCategory',
 

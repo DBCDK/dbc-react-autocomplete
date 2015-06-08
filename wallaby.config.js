@@ -8,7 +8,6 @@ module.exports = function() {
   return {
     files: [
       {pattern: 'src/testlib/phantomPolyfill.js', instrument: false},
-      {pattern: 'src/components/**/*.scss', instrument: false, load: false},
       {pattern: 'src/components/**/*.component.js', load: false}
     ],
 

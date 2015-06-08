@@ -3,8 +3,6 @@
 import React from 'react';
 import AutoCompleteCategory from './../AutoCompleteCategory/AutoCompleteCategory.component.js';
 
-import './AutoComplete.scss';
-
 let AutoComplete = React.createClass({
   render() {
     let categories = this._getCategories();

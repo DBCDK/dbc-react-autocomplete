@@ -2,7 +2,6 @@
 import React from 'react';
 import {isArray} from 'lodash';
 import AutoCompleteRow from '../AutoCompleteRow/AutoCompleteRow.component.js';
-import './AutoCompleteCategory.scss';
 
 var AutoCompleteCategory = React.createClass({
   render() {

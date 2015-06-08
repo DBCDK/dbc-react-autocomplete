@@ -9,8 +9,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-require('./AutoCompleteRow.scss');
-
 var AutoCompleteRow = _react2['default'].createClass({
   displayName: 'AutoCompleteRow',
 

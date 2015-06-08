@@ -14,8 +14,6 @@ var _AutoCompleteCategoryAutoCompleteCategoryComponentJs = require('./../AutoCom
 
 var _AutoCompleteCategoryAutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryAutoCompleteCategoryComponentJs);
 
-require('./AutoComplete.scss');
-
 var AutoComplete = _react2['default'].createClass({
   displayName: 'AutoComplete',
 
@@ -39,6 +37,11 @@ var AutoComplete = _react2['default'].createClass({
     });
 
     return categories;
+  },
+
+  propTypes: {
+    visible: _react2['default'].PropTypes.bool,
+    data: _react2['default'].PropTypes.array
   }
 });
 

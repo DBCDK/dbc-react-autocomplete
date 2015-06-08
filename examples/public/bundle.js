@@ -20973,8 +20973,6 @@
 	
 	var _AutoCompleteCategoryAutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryAutoCompleteCategoryComponentJs);
 	
-	__webpack_require__(/*! ./AutoComplete.scss */ 164);
-	
 	var AutoComplete = _react2['default'].createClass({
 	  displayName: 'AutoComplete',
 	
@@ -20998,6 +20996,11 @@
 	    });
 	
 	    return categories;
+	  },
+	
+	  propTypes: {
+	    visible: _react2['default'].PropTypes.bool,
+	    data: _react2['default'].PropTypes.array
 	  }
 	});
 	
@@ -21027,8 +21030,6 @@
 	var _AutoCompleteRowAutoCompleteRowComponentJs = __webpack_require__(/*! ../AutoCompleteRow/AutoCompleteRow.component.js */ 161);
 	
 	var _AutoCompleteRowAutoCompleteRowComponentJs2 = _interopRequireDefault(_AutoCompleteRowAutoCompleteRowComponentJs);
-	
-	__webpack_require__(/*! ./AutoCompleteCategory.scss */ 162);
 	
 	var AutoCompleteCategory = _react2['default'].createClass({
 	  displayName: 'AutoCompleteCategory',
@@ -33360,8 +33361,6 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(/*! ./AutoCompleteRow.scss */ 165);
-	
 	var AutoCompleteRow = _react2['default'].createClass({
 	  displayName: 'AutoCompleteRow',
 	
@@ -33391,34 +33390,6 @@
 	
 	exports['default'] = AutoCompleteRow;
 	module.exports = exports['default'];
-
-/***/ },
-/* 162 */
-/*!***********************************************************************!*\
-  !*** ./src/components/AutoCompleteCategory/AutoCompleteCategory.scss ***!
-  \***********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 163 */,
-/* 164 */
-/*!*******************************************************!*\
-  !*** ./src/components/AutoComplete/AutoComplete.scss ***!
-  \*******************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 165 */
-/*!*************************************************************!*\
-  !*** ./src/components/AutoCompleteRow/AutoCompleteRow.scss ***!
-  \*************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

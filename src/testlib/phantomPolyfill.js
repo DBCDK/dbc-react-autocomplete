@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * @file Polyfill for the bind function, usedby the wallabyjs testtool.
+ */
+
 if (!Function.prototype.bind) {
   Function.prototype.bind = function(oThis) { // eslint-disable-line
     if (typeof this !== 'function') {

@@ -22,6 +22,6 @@ module.exports = function(config) {
     webpack: require('./webpack.test.config'),
     webpackMiddleware: {
       noInfo: true
-    }
+    },
   });
 };

@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react/addons';
-let TestUtils = React.addons.TestUtils;
+const TestUtils = React.addons.TestUtils;
 
 import {expect} from 'chai';
 import AutoComplete from '../AutoComplete.component.js';
@@ -8,13 +8,13 @@ import AutoComplete from '../AutoComplete.component.js';
 describe('Test AutoComplete Component', () => {
 
   it('Assert hidden class to be added when visible:false', () => {
-    let rendered = TestUtils.renderIntoDocument(<AutoComplete visible={false}/>);
+    const rendered = TestUtils.renderIntoDocument(<AutoComplete visible={false}/>);
 
     expect(rendered.getDOMNode().className).to.contain('autocomplete--container-hidden');
   });
 
   it('Assert hidden class not to be added when visible:true', () => {
-    let rendered = TestUtils.renderIntoDocument(<AutoComplete visible={true}/>);
+    const rendered = TestUtils.renderIntoDocument(<AutoComplete visible={true}/>);
 
     expect(rendered.getDOMNode().className).not.to.contain('autocomplete--container-hidden');
   });

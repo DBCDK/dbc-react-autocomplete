@@ -18,7 +18,8 @@ var AutoCompleteCategory = React.createClass({
 
     let rows = [];
     data.forEach((value, key) => {
-      rows.push(<AutoCompleteRow key={key} text={value.text} image={value.img}/>);
+      rows.push(
+        <AutoCompleteRow key={key} text={value.text} image={value.img}/>);
     });
 
     return (
@@ -37,6 +38,11 @@ var AutoCompleteCategory = React.createClass({
         <span className='autocomplete--category--label'>{label}</span>
       </div>
     );
+  },
+
+  propTypes: {
+    data: React.PropTypes.array,
+    label: React.PropTypes.string
   }
 });
 

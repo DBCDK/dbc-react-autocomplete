@@ -6,16 +6,22 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+/**
+ * @file Main autocomplete component
+ */
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _lodash = require('lodash');
 
 var _AutoCompleteCategoryAutoCompleteCategoryComponentJs = require('./../AutoCompleteCategory/AutoCompleteCategory.component.js');
 
 var _AutoCompleteCategoryAutoCompleteCategoryComponentJs2 = _interopRequireDefault(_AutoCompleteCategoryAutoCompleteCategoryComponentJs);
 
-var AutoComplete = _react2['default'].createClass({
-  displayName: 'AutoComplete',
+exports['default'] = _react2['default'].createClass({
+  displayName: 'AutoComplete.component',
 
   render: function render() {
     var categories = this._getCategories();
@@ -29,11 +35,19 @@ var AutoComplete = _react2['default'].createClass({
     );
   },
 
+  /*
+   * Retrieves the categories from the data prop and renders a
+   * AutoCompleteCategory for each category.
+   *
+   * @return {Array}
+   */
   _getCategories: function _getCategories() {
+
     var categories = [];
-    var data = this.props.data || [];
-    data.forEach(function (value, key) {
-      categories.push(_react2['default'].createElement(_AutoCompleteCategoryAutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label, data: value.data }));
+    var data = this.props.data || {};
+
+    (0, _lodash.forIn)(data, function (value, key) {
+      categories.splice(value.weight, 0, _react2['default'].createElement(_AutoCompleteCategoryAutoCompleteCategoryComponentJs2['default'], { key: key, label: value.label, data: value.data }));
     });
 
     return categories;
@@ -41,9 +55,7 @@ var AutoComplete = _react2['default'].createClass({
 
   propTypes: {
     visible: _react2['default'].PropTypes.bool,
-    data: _react2['default'].PropTypes.array
+    data: _react2['default'].PropTypes.object
   }
 });
-
-exports['default'] = AutoComplete;
 module.exports = exports['default'];

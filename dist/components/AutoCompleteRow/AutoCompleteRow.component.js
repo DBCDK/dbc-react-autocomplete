@@ -14,18 +14,20 @@ var AutoCompleteRow = _react2['default'].createClass({
 
   render: function render() {
     var text = this.props.text || '';
-    var image = this.props.image || '';
+    var image = this.props.image || null;
+    var imageElement = null;
+
+    if (image) {
+      imageElement = this._getImage(image);
+    }
+
     return _react2['default'].createElement(
       'div',
       { className: 'autocomplete--row' },
       _react2['default'].createElement(
         'a',
         { href: '#' },
-        _react2['default'].createElement(
-          'div',
-          { className: 'autocomplete--row-image' },
-          _react2['default'].createElement('img', { src: image })
-        ),
+        imageElement,
         _react2['default'].createElement(
           'div',
           { className: 'autocomplete--row-text' },
@@ -33,6 +35,19 @@ var AutoCompleteRow = _react2['default'].createClass({
         )
       )
     );
+  },
+
+  _getImage: function _getImage(image) {
+    return _react2['default'].createElement(
+      'div',
+      { className: 'autocomplete--row-image' },
+      _react2['default'].createElement('img', { src: image })
+    );
+  },
+
+  propTypes: {
+    text: _react2['default'].PropTypes.string,
+    image: _react2['default'].PropTypes.string
   }
 });
 

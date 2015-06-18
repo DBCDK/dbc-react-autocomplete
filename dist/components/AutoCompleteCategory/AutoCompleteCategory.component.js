@@ -57,6 +57,11 @@ var AutoCompleteCategory = _react2['default'].createClass({
         label
       )
     );
+  },
+
+  propTypes: {
+    data: _react2['default'].PropTypes.array,
+    label: _react2['default'].PropTypes.string
   }
 });
 

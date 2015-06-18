@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import {forIn} from 'lodash';
 import AutoCompleteCategory from './../AutoCompleteCategory/AutoCompleteCategory.component.js';
 
 export default React.createClass({
@@ -29,10 +30,10 @@ export default React.createClass({
   _getCategories() {
 
     let categories = [];
-    const data = this.props.data || [];
-    data.forEach((value, key) => {
-      categories.push(
-        <AutoCompleteCategory key={key} label={value.label} data={value.data}/>);
+    const data = this.props.data || {};
+
+    forIn(data, (value, key) => {
+      categories.splice(value.weight, 0, <AutoCompleteCategory key={key} label={value.label} data={value.data}/>);
     });
 
     return categories;
@@ -40,6 +41,6 @@ export default React.createClass({
 
   propTypes: {
     visible: React.PropTypes.bool,
-    data: React.PropTypes.array
+    data: React.PropTypes.object
   }
 });

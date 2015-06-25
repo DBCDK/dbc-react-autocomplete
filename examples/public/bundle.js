@@ -33340,14 +33340,11 @@
 	    }
 	
 	    var label = this.props.label || null;
-	    var labelToRender = '';
-	    if (label) {
-	      labelToRender = this.getLabel(label);
-	    }
+	    var labelToRender = label ? this.getLabel(label) : '';
 	
 	    var rows = [];
 	    data.forEach(function (value, key) {
-	      rows.push(_react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { key: key, text: value.text, image: value.img }));
+	      rows.push(_react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { key: key, text: value.text, image: value.img, href: value.href }));
 	    });
 	
 	    return _react2['default'].createElement(
@@ -33395,6 +33392,7 @@
 	
 	  propTypes: {
 	    text: _react2['default'].PropTypes.string,
+	    href: _react2['default'].PropTypes.string,
 	    image: _react2['default'].PropTypes.string
 	  },
 	
@@ -33409,18 +33407,15 @@
 	  render: function render() {
 	    var text = this.props.text || '';
 	    var image = this.props.image || null;
-	    var imageElement = null;
-	
-	    if (image) {
-	      imageElement = this.getImage(image);
-	    }
+	    var href = this.props.href || '#';
+	    var imageElement = image ? this.getImage(image) : null;
 	
 	    return _react2['default'].createElement(
 	      'div',
 	      { className: 'autocomplete--row' },
 	      _react2['default'].createElement(
 	        'a',
-	        { href: '#' },
+	        { href: href },
 	        imageElement,
 	        _react2['default'].createElement(
 	          'div',

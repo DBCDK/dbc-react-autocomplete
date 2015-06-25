@@ -21,7 +21,6 @@ export default React.createClass({
    * @return {Array}
    */
   getCategories() {
-
     let categories = [];
     const data = this.props.data || {};
 

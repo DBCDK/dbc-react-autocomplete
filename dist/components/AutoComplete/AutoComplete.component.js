@@ -35,7 +35,6 @@ exports['default'] = _react2['default'].createClass({
    * @return {Array}
    */
   getCategories: function getCategories() {
-
     var categories = [];
     var data = this.props.data || {};
 

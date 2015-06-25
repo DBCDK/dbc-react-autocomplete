@@ -11,6 +11,19 @@ import {isArray} from 'lodash';
 import AutoCompleteRow from '../AutoCompleteRow/AutoCompleteRow.component.js';
 
 var AutoCompleteCategory = React.createClass({
+  propTypes: {
+    data: React.PropTypes.array,
+    label: React.PropTypes.string
+  },
+
+  getLabel(label) {
+    return (
+      <div className='autocomplete--category--label-container' >
+        <span className='autocomplete--category--label' >{label}</span>
+      </div>
+    );
+  },
+
   render() {
     let data = this.props.data || [];
     if (!isArray(data)) {
@@ -20,36 +33,23 @@ var AutoCompleteCategory = React.createClass({
     const label = this.props.label || null;
     let labelToRender = '';
     if (label) {
-      labelToRender = this._getLabel(label);
+      labelToRender = this.getLabel(label);
     }
 
     let rows = [];
     data.forEach((value, key) => {
       rows.push(
-        <AutoCompleteRow key={key} text={value.text} image={value.img}/>);
+        <AutoCompleteRow key={key} text={value.text} image={value.img} />);
     });
 
     return (
-      <div className='autocomplete--category-container'>
+      <div className='autocomplete--category-container' >
         {labelToRender}
-        <div className='autocomplete--category--rows-container'>
+        <div className='autocomplete--category--rows-container' >
           {rows}
         </div>
       </div>
     );
-  },
-
-  _getLabel(label) {
-    return (
-      <div className='autocomplete--category--label-container'>
-        <span className='autocomplete--category--label'>{label}</span>
-      </div>
-    );
-  },
-
-  propTypes: {
-    data: React.PropTypes.array,
-    label: React.PropTypes.string
   }
 });
 

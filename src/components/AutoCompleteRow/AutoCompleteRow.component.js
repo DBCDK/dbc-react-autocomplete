@@ -10,6 +10,7 @@ import React from 'react';
 var AutoCompleteRow = React.createClass({
   propTypes: {
     text: React.PropTypes.string,
+    pid: React.PropTypes.string,
     href: React.PropTypes.string,
     image: React.PropTypes.string
   },

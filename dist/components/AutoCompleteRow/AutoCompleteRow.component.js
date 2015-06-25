@@ -20,6 +20,7 @@ var AutoCompleteRow = _react2['default'].createClass({
 
   propTypes: {
     text: _react2['default'].PropTypes.string,
+    pid: _react2['default'].PropTypes.string,
     href: _react2['default'].PropTypes.string,
     image: _react2['default'].PropTypes.string
   },

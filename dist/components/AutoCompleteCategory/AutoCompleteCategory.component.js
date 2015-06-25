@@ -51,9 +51,8 @@ var AutoCompleteCategory = _react2['default'].createClass({
     var label = this.props.label || null;
     var labelToRender = label ? this.getLabel(label) : '';
 
-    var rows = [];
-    data.forEach(function (value, key) {
-      rows.push(_react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { key: key, text: value.text, image: value.img, href: value.href }));
+    var rows = data.map(function (value, key) {
+      return _react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { key: key, text: value.text, image: value.image, href: value.href });
     });
 
     return _react2['default'].createElement(

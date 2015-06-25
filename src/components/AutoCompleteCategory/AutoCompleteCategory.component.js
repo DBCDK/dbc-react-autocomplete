@@ -33,10 +33,10 @@ var AutoCompleteCategory = React.createClass({
     const label = this.props.label || null;
     const labelToRender = (label) ? this.getLabel(label) : '';
 
-    let rows = [];
-    data.forEach((value, key) => {
-      rows.push(
-        <AutoCompleteRow key={key} text={value.text} image={value.img} href={value.href} />);
+    const rows = data.map((value, key) => {
+      return (
+        <AutoCompleteRow key={key} text={value.text} image={value.image} href={value.href} />
+      );
     });
 
     return (

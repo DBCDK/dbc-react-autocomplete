@@ -1,4 +1,11 @@
 'use strict';
+
+/**
+ * @file
+ * Delivers a component representing one single category in the autocomplete
+ * parent autocomplete component.
+ */
+
 import React from 'react';
 import {isArray} from 'lodash';
 import AutoCompleteRow from '../AutoCompleteRow/AutoCompleteRow.component.js';

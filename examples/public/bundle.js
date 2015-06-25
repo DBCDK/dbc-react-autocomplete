@@ -21008,7 +21008,7 @@
 	  render: function render() {
 	    var categories = this.getCategories();
 	    var classNames = 'autocomplete--container';
-	    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
+	    classNames += this.props.visible ? '' : ' autocomplete--container-hidden';
 	
 	    return _react2['default'].createElement(
 	      'div',

@@ -20982,16 +20982,9 @@
 	exports['default'] = _react2['default'].createClass({
 	  displayName: 'AutoComplete.component',
 	
-	  render: function render() {
-	    var categories = this._getCategories();
-	    var classNames = 'autocomplete--container';
-	    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
-	
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: classNames },
-	      categories
-	    );
+	  propTypes: {
+	    visible: _react2['default'].PropTypes.bool,
+	    data: _react2['default'].PropTypes.object
 	  },
 	
 	  /*
@@ -21000,7 +20993,7 @@
 	   *
 	   * @return {Array}
 	   */
-	  _getCategories: function _getCategories() {
+	  getCategories: function getCategories() {
 	
 	    var categories = [];
 	    var data = this.props.data || {};
@@ -21012,9 +21005,16 @@
 	    return categories;
 	  },
 	
-	  propTypes: {
-	    visible: _react2['default'].PropTypes.bool,
-	    data: _react2['default'].PropTypes.object
+	  render: function render() {
+	    var categories = this.getCategories();
+	    var classNames = 'autocomplete--container';
+	    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
+	
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: classNames },
+	      categories
+	    );
 	  }
 	});
 	module.exports = exports['default'];
@@ -33291,11 +33291,18 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	/**
+	 * @file
+	 * Delivers a component representing one single category in the autocomplete
+	 * parent autocomplete component.
+	 */
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
@@ -33310,6 +33317,23 @@
 	var AutoCompleteCategory = _react2['default'].createClass({
 	  displayName: 'AutoCompleteCategory',
 	
+	  propTypes: {
+	    data: _react2['default'].PropTypes.array,
+	    label: _react2['default'].PropTypes.string
+	  },
+	
+	  getLabel: function getLabel(label) {
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'autocomplete--category--label-container' },
+	      _react2['default'].createElement(
+	        'span',
+	        { className: 'autocomplete--category--label' },
+	        label
+	      )
+	    );
+	  },
+	
 	  render: function render() {
 	    var data = this.props.data || [];
 	    if (!(0, _lodash.isArray)(data)) {
@@ -33319,7 +33343,7 @@
 	    var label = this.props.label || null;
 	    var labelToRender = '';
 	    if (label) {
-	      labelToRender = this._getLabel(label);
+	      labelToRender = this.getLabel(label);
 	    }
 	
 	    var rows = [];
@@ -33337,23 +33361,6 @@
 	        rows
 	      )
 	    );
-	  },
-	
-	  _getLabel: function _getLabel(label) {
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: 'autocomplete--category--label-container' },
-	      _react2['default'].createElement(
-	        'span',
-	        { className: 'autocomplete--category--label' },
-	        label
-	      )
-	    );
-	  },
-	
-	  propTypes: {
-	    data: _react2['default'].PropTypes.array,
-	    label: _react2['default'].PropTypes.string
 	  }
 	});
 	
@@ -33368,11 +33375,17 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	/**
+	 * @file
+	 * Renders the single row in the parent autocomplete component.
+	 */
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
@@ -33381,13 +33394,26 @@
 	var AutoCompleteRow = _react2['default'].createClass({
 	  displayName: 'AutoCompleteRow',
 	
+	  propTypes: {
+	    text: _react2['default'].PropTypes.string,
+	    image: _react2['default'].PropTypes.string
+	  },
+	
+	  getImage: function getImage(image) {
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'autocomplete--row-image' },
+	      _react2['default'].createElement('img', { src: image })
+	    );
+	  },
+	
 	  render: function render() {
 	    var text = this.props.text || '';
 	    var image = this.props.image || null;
 	    var imageElement = null;
 	
 	    if (image) {
-	      imageElement = this._getImage(image);
+	      imageElement = this.getImage(image);
 	    }
 	
 	    return _react2['default'].createElement(
@@ -33404,19 +33430,6 @@
 	        )
 	      )
 	    );
-	  },
-	
-	  _getImage: function _getImage(image) {
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: 'autocomplete--row-image' },
-	      _react2['default'].createElement('img', { src: image })
-	    );
-	  },
-	
-	  propTypes: {
-	    text: _react2['default'].PropTypes.string,
-	    image: _react2['default'].PropTypes.string
 	  }
 	});
 	

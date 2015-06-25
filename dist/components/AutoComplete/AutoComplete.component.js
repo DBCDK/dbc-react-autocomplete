@@ -23,16 +23,9 @@ var _AutoCompleteCategoryAutoCompleteCategoryComponentJs2 = _interopRequireDefau
 exports['default'] = _react2['default'].createClass({
   displayName: 'AutoComplete.component',
 
-  render: function render() {
-    var categories = this._getCategories();
-    var classNames = 'autocomplete--container';
-    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
-
-    return _react2['default'].createElement(
-      'div',
-      { className: classNames },
-      categories
-    );
+  propTypes: {
+    visible: _react2['default'].PropTypes.bool,
+    data: _react2['default'].PropTypes.object
   },
 
   /*
@@ -41,7 +34,7 @@ exports['default'] = _react2['default'].createClass({
    *
    * @return {Array}
    */
-  _getCategories: function _getCategories() {
+  getCategories: function getCategories() {
 
     var categories = [];
     var data = this.props.data || {};
@@ -53,9 +46,16 @@ exports['default'] = _react2['default'].createClass({
     return categories;
   },
 
-  propTypes: {
-    visible: _react2['default'].PropTypes.bool,
-    data: _react2['default'].PropTypes.object
+  render: function render() {
+    var categories = this.getCategories();
+    var classNames = 'autocomplete--container';
+    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
+
+    return _react2['default'].createElement(
+      'div',
+      { className: classNames },
+      categories
+    );
   }
 });
 module.exports = exports['default'];

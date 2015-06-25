@@ -1,9 +1,16 @@
 'use strict';
+
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+/**
+ * @file
+ * Delivers a component representing one single category in the autocomplete
+ * parent autocomplete component.
+ */
 
 var _react = require('react');
 
@@ -18,6 +25,23 @@ var _AutoCompleteRowAutoCompleteRowComponentJs2 = _interopRequireDefault(_AutoCo
 var AutoCompleteCategory = _react2['default'].createClass({
   displayName: 'AutoCompleteCategory',
 
+  propTypes: {
+    data: _react2['default'].PropTypes.array,
+    label: _react2['default'].PropTypes.string
+  },
+
+  getLabel: function getLabel(label) {
+    return _react2['default'].createElement(
+      'div',
+      { className: 'autocomplete--category--label-container' },
+      _react2['default'].createElement(
+        'span',
+        { className: 'autocomplete--category--label' },
+        label
+      )
+    );
+  },
+
   render: function render() {
     var data = this.props.data || [];
     if (!(0, _lodash.isArray)(data)) {
@@ -27,7 +51,7 @@ var AutoCompleteCategory = _react2['default'].createClass({
     var label = this.props.label || null;
     var labelToRender = '';
     if (label) {
-      labelToRender = this._getLabel(label);
+      labelToRender = this.getLabel(label);
     }
 
     var rows = [];
@@ -45,23 +69,6 @@ var AutoCompleteCategory = _react2['default'].createClass({
         rows
       )
     );
-  },
-
-  _getLabel: function _getLabel(label) {
-    return _react2['default'].createElement(
-      'div',
-      { className: 'autocomplete--category--label-container' },
-      _react2['default'].createElement(
-        'span',
-        { className: 'autocomplete--category--label' },
-        label
-      )
-    );
-  },
-
-  propTypes: {
-    data: _react2['default'].PropTypes.array,
-    label: _react2['default'].PropTypes.string
   }
 });
 

@@ -36,7 +36,7 @@ export default React.createClass({
   render() {
     const categories = this.getCategories();
     let classNames = 'autocomplete--container';
-    classNames += (this.props.visible === true) ? '' : ' autocomplete--container-hidden';
+    classNames += this.props.visible ? '' : ' autocomplete--container-hidden';
 
     return (
       <div className={classNames} >

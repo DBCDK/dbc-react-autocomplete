@@ -1,4 +1,10 @@
 'use strict';
+
+/**
+ * @file
+ * Renders the single row in the parent autocomplete component.
+ */
+
 import React from 'react';
 
 var AutoCompleteRow = React.createClass({

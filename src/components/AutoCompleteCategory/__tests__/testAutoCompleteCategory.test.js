@@ -24,7 +24,6 @@ describe('Test AutoCompleteCategory Component', () => {
     let rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory label={label}/>);
 
     let needle = TestUtils.scryRenderedDOMComponentsWithClass(rendered, 'autocomplete--category--label');
-    console.log(needle);
     assert.lengthOf(needle, 0, 'no DOM objects with className=\'autocomplete--category--label\' found');
 
     //testing testlabel

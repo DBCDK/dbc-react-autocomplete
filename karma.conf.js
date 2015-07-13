@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -22,6 +24,6 @@ module.exports = function(config) {
     webpack: require('./webpack.test.config'),
     webpackMiddleware: {
       noInfo: true
-    },
+    }
   });
 };

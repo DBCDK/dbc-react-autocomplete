@@ -4,9 +4,10 @@
   "description": "DBC autocomplete React components. Giving autocomplete features on a given text input using React.",
   "main": "index.js",
   "scripts": {
+    "build": "babel ./src --ignore=./src/testlib -d dist",
     "test": "karma start --single-run=true",
     "test:watch": "karma start",
-    "lint": "esw -w ./src",
+    "lint": "eslint ./src",
     "lint:checkstyle": "eslint ./src -o report.xml -f checkstyle",
     "watch:babel": "babel ./src --ignore=./src/testlib --watch -d dist",
     "watch:bundle": "webpack --progress --colors --watch -d",

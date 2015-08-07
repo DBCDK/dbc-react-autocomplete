@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -11,7 +13,7 @@ module.exports = function(config) {
     },
     reporters: ['mocha', 'dots', 'junit'],
     junitReporter: {
-      outputFile: 'output/test-results.xml'
+      outputDir: 'output'
     },
     port: 9876,
     colors: true,
@@ -22,6 +24,6 @@ module.exports = function(config) {
     webpack: require('./webpack.test.config'),
     webpackMiddleware: {
       noInfo: true
-    },
+    }
   });
 };

@@ -9,9 +9,10 @@ import {forIn} from 'lodash';
 import AutoCompleteCategory from './../AutoCompleteCategory/AutoCompleteCategory.component.js';
 
 export default React.createClass({
+  displayName: 'AutoComplete',
   propTypes: {
-    visible: React.PropTypes.bool,
-    data: React.PropTypes.object
+    data: React.PropTypes.object,
+    visible: React.PropTypes.bool
   },
 
   /*
@@ -26,7 +27,7 @@ export default React.createClass({
 
     forIn(data, (value, key) => {
       categories.splice(value.weight, 0,
-        <AutoCompleteCategory key={key} label={value.label} data={value.data} />);
+        <AutoCompleteCategory data={value.data} key={key} label={value.label} />);
     });
 
     return categories;
@@ -35,7 +36,7 @@ export default React.createClass({
   render() {
     const categories = this.getCategories();
     let classNames = 'autocomplete--container';
-    classNames += this.props.visible ? '' : ' autocomplete--container-hidden';
+    classNames += this.props.visible === true ? '' : ' autocomplete--container-hidden';
 
     return (
       <div className={classNames} >

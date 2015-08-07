@@ -1,16 +1,16 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 /**
  * @file
  * Delivers a component representing one single category in the autocomplete
  * parent autocomplete component.
  */
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _react = require('react');
 
@@ -24,7 +24,6 @@ var _AutoCompleteRowAutoCompleteRowComponentJs2 = _interopRequireDefault(_AutoCo
 
 var AutoCompleteCategory = _react2['default'].createClass({
   displayName: 'AutoCompleteCategory',
-
   propTypes: {
     data: _react2['default'].PropTypes.array,
     label: _react2['default'].PropTypes.string
@@ -52,7 +51,7 @@ var AutoCompleteCategory = _react2['default'].createClass({
     var labelToRender = label ? this.getLabel(label) : '';
 
     var rows = data.map(function (value, key) {
-      return _react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { key: key, text: value.text, image: value.image, href: value.href });
+      return _react2['default'].createElement(_AutoCompleteRowAutoCompleteRowComponentJs2['default'], { href: value.href, image: value.image, key: key, text: value.text });
     });
 
     return _react2['default'].createElement(

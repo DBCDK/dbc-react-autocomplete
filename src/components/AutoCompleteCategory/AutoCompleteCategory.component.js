@@ -11,6 +11,7 @@ import {isArray} from 'lodash';
 import AutoCompleteRow from '../AutoCompleteRow/AutoCompleteRow.component.js';
 
 var AutoCompleteCategory = React.createClass({
+  displayName: 'AutoCompleteCategory',
   propTypes: {
     data: React.PropTypes.array,
     label: React.PropTypes.string
@@ -35,7 +36,7 @@ var AutoCompleteCategory = React.createClass({
 
     const rows = data.map((value, key) => {
       return (
-        <AutoCompleteRow key={key} text={value.text} image={value.image} href={value.href} />
+        <AutoCompleteRow href={value.href} image={value.image} key={key} text={value.text}/>
       );
     });
 

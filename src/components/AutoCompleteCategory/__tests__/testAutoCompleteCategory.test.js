@@ -1,5 +1,5 @@
 'use strict';
-/*eslint-disable spaced-line-comment */
+/* eslint-disable spaced-line-comment */
 import React from 'react/addons';
 import {expect, assert} from 'chai';
 
@@ -19,14 +19,14 @@ describe('Test AutoCompleteCategory Component', () => {
   });
 
   it('Assert no rendering of labelblock when label is empty', () => {
-    //testing empty label
+    // testing empty label
     let label = '';
     let rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory label={label}/>);
 
     let needle = TestUtils.scryRenderedDOMComponentsWithClass(rendered, 'autocomplete--category--label');
     assert.lengthOf(needle, 0, 'no DOM objects with className=\'autocomplete--category--label\' found');
 
-    //testing testlabel
+    // testing testlabel
     label = 'TestLabel';
     rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory label={label}/>);
 
@@ -42,12 +42,12 @@ describe('Test AutoCompleteCategory Component', () => {
   });
 
   it('Assert props.data is handled correct', () => {
-    //no data provided
+    // no data provided
     let rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory />);
     let rowsContainer = TestUtils.findRenderedDOMComponentWithClass(rendered, 'autocomplete--category--rows-container');
     assert.equal(rowsContainer.props.children.length, 0);
 
-    //data is provided but not in array
+    // data is provided but not in array
     let DATA = 'string-not-wrapped-in-array';
     rendered = TestUtils.renderIntoDocument(<AutoCompleteCategory data={DATA}/>);
     rowsContainer = TestUtils.findRenderedDOMComponentWithClass(rendered, 'autocomplete--category--rows-container');

@@ -7,8 +7,6 @@ import AutoComplete from '../AutoComplete.component.js';
 
 describe('Test AutoComplete Component', () => {
 
-  expect(false).to.be.true; // eslint-disable-line
-
   it('Assert hidden class to be added when visible:false', () => {
     const rendered = TestUtils.renderIntoDocument(<AutoComplete visible={false}/>);
 
